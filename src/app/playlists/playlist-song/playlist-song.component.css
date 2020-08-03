@@ -1,0 +1,198 @@
+.btn {
+  background-color: rgb(255, 30, 30); /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #e14141;
+}
+
+.btnComment {
+  background-color: rgb(30, 113, 255); /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.btnComment:hover {
+  background-color: #042eff;
+}
+
+
+.box-content {
+  width: 100%;
+  float: left;
+}
+
+.box-left {
+  width: 60%;
+  float: left;
+}
+
+.right-menu {
+  float: left;
+  background-color: #1abc9c;
+}
+
+.song-info {
+  float: left;
+  width: 100%;
+}
+
+.song-name {
+  float: left;
+  width: 80%;
+}
+
+.song-views {
+  text-align: right;
+  width: auto;
+  float: right;
+}
+
+.play-area {
+  clear: left;
+  width: 100%;
+  height: 100%;
+  background-color: darkgray;
+}
+
+.player-mp3 {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar {
+  width: 40%;
+  height: 100%;
+  padding: 3px 5px 5px 5px;
+  float: left;
+}
+
+.info-song {
+  width: 60%;
+  float: left;
+  height: 100%;
+  text-align: center;
+  color: white;
+  padding-right: 3%;
+}
+
+#songImg {
+  width: 287px;
+  height: 240px;
+}
+
+#songAvatar {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+  border-radius: 50%;
+
+}
+
+.control-bar {
+  clear: both;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+.btn-add-playlist {
+  background-color: rgba(30, 144, 255, 0); /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+
+}
+
+/* Darker background on mouse-over */
+.btn-add-playlist:hover {
+  background-color: rgba(65, 105, 225, 0);
+}
+
+.iconEditPL {
+  width: 30px;
+  height: 30px;
+}
+
+.button
+{
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 56px;
+  border-radius: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+.button::after
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-color: #2ac275;
+  background-image: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);
+  background: #2ac275;
+  background: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);
+  content: '';
+  z-index: 0;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.button:hover::after
+{
+  left: 0;
+}
+.button a
+{
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  z-index: 1;
+  line-height: 56px;
+}
+.button span
+{
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 56px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.contact_form_button
+{
+  margin-top: 8px;
+  outline: none;
+}
+
+
+
+
+

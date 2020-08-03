@@ -1,0 +1,98 @@
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(assets/img/bg-img/breadcumb.jpg);">
+  <div class="bradcumbContent">
+    <h2>Edit Song</h2>
+  </div>
+</section>
+
+<section class="login-area section-padding-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="login-content">
+          <div class="create-song-form">
+            <form [formGroup]="editSongForm" (ngSubmit)="onSubmit()" >
+              <input type="hidden" formControlName="id"/>
+              <div class="form-group">
+                <img [src]="url" alt="">
+                <br>
+                <br>
+                <div class="uploadImage" style="width: 100%;">
+                  <label style="cursor: pointer; margin-left: 164px" for="image" class="button contact_form_button">
+                      <span><i class="fa fa-upload" aria-hidden="true"></i> Tải lên ảnh</span>
+                  </label>
+                  <input type="file" id="image" (change)="displayImage($event)" accept="image/*" hidden>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="songName">Tên bài hát:</label>
+                <input type="text" class="form-control rounded" id="songName" placeholder="Nhập tên bài hát..." formControlName="name" (change)="turnSuccessOff()">
+                <p style="color:red;" *ngIf="editSongForm.get('name').invalid && editSongForm.get('name').touched">Tên bài hát cần có ít nhất 6 ký tự.</p>
+              </div>
+              <div class="form-group">
+                <label for="author">Tên tác giả:</label>
+                <input type="text" class="form-control rounded" id="author" formControlName="songAuthor" (change)="turnSuccessOff()">
+                <p style="color:red;" *ngIf="editSongForm.get('songAuthor').invalid && editSongForm.get('songAuthor').touched">Bạn cần nhập tên tác giả.</p>
+              </div>
+              <div class="form-group">
+                <label>Ca sĩ, diễn viên trình diễn:</label>
+                <div>
+                  <select class="form-control rounded" #singerId (change)="changeSingerId(singerId.value)" style="width: 70%; float: left" >
+                    <option selected [value]="selectingSinger.id" >{{selectingSinger.name}}</option>
+                    <option *ngFor="let singer of singerList" [value]="singer.id">{{singer.name}}</option>
+                  </select>
+                  <div class="create-btn">
+                    <button class="button contact_form_button" data-toggle="modal"
+                            data-target="#exampleModal" data-whatever="createSinger" style="width: 25%; margin: 0 0 0 20px; height: 50px">
+                      <span>New Singer</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="category_id">Thể loại</label>
+                <select class="form-control rounded" id="category_id" #option (change)="changeCategory(option.value)" >
+                  <option selected>{{selectedCategory.name}}</option>
+                  <option *ngFor="let cate of categoryList" [value]="cate.id">
+                    {{cate.name}}
+                  </option>
+                </select>
+<!--                <p style="color:red;" *ngIf="editSongForm.get('category').invalid && editSongForm.get('category').touched">Xin hãy chọn thể loại.</p>-->
+              </div>
+              <div class="form-group">
+                <label for="description">Mô tả:</label>
+                <input type="text" class="form-control rounded" id="description" formControlName="description" (change)="turnSuccessOff()">
+              </div>
+              <div *ngIf="progressBarStatus" class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped"
+                     role="progressbar" attr.aria-valuenow="{{percentage}}"
+                     aria-valuemin="0" aria-valuemax="100"
+                     [ngStyle]="{width:percentage+'%'}">
+                  {{percentage}}%
+                </div>
+              </div>
+              <button type="submit" class="button contact_form_button" [disabled]="!editSongForm.valid"><span>Update Song</span></button>
+            </form>
+            <div class="alert alert-success" role="alert" *ngIf="isShowSuccess">
+              {{ message }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Singer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <app-singer></app-singer>
+    </div>
+  </div>
+</div>

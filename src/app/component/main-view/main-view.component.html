@@ -1,0 +1,263 @@
+<!-- ##### Hero Area Start ##### -->
+<section class="hero-area">
+  <div class="single-hero-slide d-flex align-items-center justify-content-center" style="margin-left: 40vh">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="hero-slides-content text-center">
+            <h6 data-animation="fadeInUp" data-delay="100ms">Feeling the beat</h6>
+            <h2 data-animation="fadeInUp" data-delay="300ms">Best of the Bét<span>Best of the Bét</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="carouselExampleFade" class=" carousel slide carousel-fade" data-ride="carousel"
+       style="height: 100vh; position: relative">
+    <ol class=" carousel-indicators">
+      <li  data-target="#carouselExampleCaptions" data-slide-to="0" class="slide-img bg-img active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class=" carousel-inner" style="height: 100%">
+      <div class="carousel-item slide-img bg-img active" style="height: 100%">
+        <img src="../../../assets/img/bg-img/bg-3.jpg" class="d-block w-100 slide-img bg-img" alt="...">
+      </div>
+      <div class="carousel-item slide-img bg-img" style="height: 100%">
+        <img src="../../../assets/img/bg-img/bg-2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item slide-img bg-img" style="height: 100%">
+        <img src="../../../assets/img/bg-img/bg-1.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<!-- ##### Hero Area End ##### -->
+
+<!-- ##### Miscellaneous Area Start ##### -->
+<section class="miscellaneous-area section-padding-100-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading style-2">
+          <p>See what’s new</p>
+          <h2>Top trending</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- ***** Newest Song ***** -->
+      <div class="col-12 col-lg-4">
+        <!--        <div class="new-hits-area mb-100">-->
+        <div class="weeks-top-area mb-100" style="height: 700px">
+          <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
+            <p>Up-and-coming tracks on BTB</p>
+            <h2>New & hot</h2>
+          </div>
+
+          <!-- Single Top Item -->
+          <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms"
+               *ngFor="let item of singerAndSongTopDate" style="height: 65px">
+            <div class="thumbnail" style="display: inline-block; border-radius: 50%; overflow: hidden;">
+              <img style="width:100%; height:100%; object-fit: cover;" [src]="item.song.songImage" alt="No">
+            </div>
+            <div class="content-">
+              <h6><a [routerLink]="['/song', item.song.id]">{{item.song.name}}</a></h6>
+              <p>{{item.singer.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ***** Most Played Song ***** -->
+      <div class="col-12 col-lg-4">
+        <!--        <div class="new-hits-area mb-100">-->
+        <div class="weeks-top-area mb-100" style="height: 700px">
+          <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
+            <p>The most played tracks on BTB</p>
+            <h2>Top 6 Song</h2>
+          </div>
+
+          <!-- Single Top Item -->
+          <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms"
+               *ngFor="let item of singerAndSongTopView" style="height: 65px">
+            <div class="thumbnail" style="display: inline-block; border-radius: 50%; overflow: hidden;">
+              <img style="width:100%; height:100%; object-fit: cover;" [src]="item.song.songImage" alt="No">
+            </div>
+            <div class="content-">
+              <h6><a [routerLink]="['/song', item.song.id]">{{item.song.name}}</a></h6>
+              <p>{{item.singer.name}}</p>
+            </div>
+          </div>
+          <!--<div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
+               data-wow-delay="100ms">
+            <div class="first-part d-flex align-items-center">
+              <div class="thumbnail">
+                <img src="../../../assets/img/bg-img/wt7.jpg" alt="">
+              </div>
+              <div class="content-">
+                <h6>Sam Smith</h6>
+                <p>Underground</p>
+              </div>
+            </div>
+            <audio preload="auto" controls>
+              <source src="../../../assets/audio/dummy-audio.mp3">
+            </audio>
+          </div>-->
+        </div>
+      </div>
+
+      <!-- ***** Most Liked Song ***** -->
+      <div class="col-12 col-lg-4">
+        <div class="weeks-top-area mb-100" style="height: 700px">
+          <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms" style="width: 320px">
+            <p>The most liked tracks on BTB</p>
+            <h2>Most Liked Song</h2>
+          </div>
+
+          <!-- Single Artist -->
+          <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms"
+               *ngFor="let item of singerAndSongTopLiked" style="height: 65px">
+            <div class="thumbnail" style="display: inline-block; border-radius: 50%; overflow: hidden;">
+              <img style="width:100%; height:100%; object-fit: cover;" [src]="item.song.songImage" alt="No">
+            </div>
+            <div class="content-">
+              <h6><a [routerLink]="['/song', item.song.id]">{{item.song.name}}</a></h6>
+              <p>{{item.singer.name}}</p>
+            </div>
+          </div>
+          <!--<div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+            <div class="thumbnail">
+              <img src="../../../assets/img/bg-img/pa1.jpg" alt="">
+            </div>
+            <div class="content-">
+              <p>Sam Smith</p>
+            </div>
+          </div>-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ##### Miscellaneous Area End ##### -->
+
+<section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading style-2">
+          <h2>TOP VIEWED PLAYLIST</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let playlist of playListTopView">
+        <div class="single-event-area mb-30 zoom" style="width: 350px; height: 476px; cursor: pointer" >
+          <div class="event-thumbnail" style="width: 350px; height: 350px">
+            <img style="height: 100%; width: 100%" [routerLink]="['/playlist-song', playlist.id]" src="{{playlist.image}}" alt="">
+          </div>
+          <div class="event-text">
+            <h4 [routerLink]="['/playlist-song', playlist.id]">{{playlist.name}}</h4>
+            <a [routerLink]="['/playlist-song', playlist.id]" class="btn see-more-btn">See Playlist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="oneMusic-buy-now-area has-fluid section-padding-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading style-2">
+          <p>See what’s new</p>
+          <h2>Playlist New</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2" *ngFor="let playlist of playListTopDate">
+        <div class="single-event-area mb-30 zoom" data-wow-delay="200ms" style="cursor: pointer">
+          <div class="event-thumbnail">
+            <img src="{{playlist.image}}" alt="" [routerLink]="['/playlist-song', playlist.id]" style="width: 255px; height: 255px">
+          </div>
+          <div class="event-text">
+            <h5 [routerLink]="['/playlist-song', playlist.id]">{{playlist.name}}</h5>
+            <p style="color: white">{{playlist.user.username}}</p>
+            <a [routerLink]="['/playlist-song', playlist.id]" class="btn see-more-btn">See Playlist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--<app-search></app-search>-->
+
+<!-- ##### Contact Area Start ##### -->
+<!--<section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(../../../assets/img/bg-img/bg-2.jpg);">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-12">-->
+<!--        <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">-->
+<!--          <p>See what’s new</p>-->
+<!--          <h2>Get In Touch</h2>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="row">-->
+<!--      <div class="col-12">-->
+<!--        &lt;!&ndash; Contact Form Area &ndash;&gt;-->
+<!--        <div class="contact-form-area">-->
+<!--          <form action="#" method="post">-->
+<!--            <div class="row">-->
+<!--              <div class="col-md-6 col-lg-4">-->
+<!--                <div class="form-group wow fadeInUp" data-wow-delay="100ms">-->
+<!--                  <input type="text" class="form-control" id="name" placeholder="Name">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 col-lg-4">-->
+<!--                <div class="form-group wow fadeInUp" data-wow-delay="200ms">-->
+<!--                  <input type="email" class="form-control" id="email" placeholder="E-mail">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-lg-4">-->
+<!--                <div class="form-group wow fadeInUp" data-wow-delay="300ms">-->
+<!--                  <input type="text" class="form-control" id="subject" placeholder="Subject">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12">-->
+<!--                <div class="form-group wow fadeInUp" data-wow-delay="400ms">-->
+<!--                  <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">-->
+<!--                <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<script>
+  $('#carouselExampleFade').carousel({
+    interval: 2000
+  });
+</script>

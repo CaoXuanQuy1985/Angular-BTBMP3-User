@@ -1,0 +1,111 @@
+<!-- Preloader -->
+<div class="preloader d-flex align-items-center justify-content-center">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+  <!-- Navbar Area -->
+  <div class="oneMusic-main-menu">
+    <div class="classy-nav-container breakpoint-off">
+      <div class="container" style="width: 100%; margin-left: 15%; margin-right: 15%">
+        <!-- Menu -->
+        <nav class="classy-navbar justify-content-between" id="oneMusicNav" style="width: 100%">
+
+          <!-- Nav brand -->
+          <a routerLink="/" class="nav-brand"><img src="assets/img/core-img/logoBTB1-trang.png" alt=""></a>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+
+            <!-- Close Button -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/playlist">Playlist</a></li>
+                <li><a routerLink="/singers">Singer</a></li>
+                <li (click)="showSearchBar()"><a style="cursor: pointer">Tìm kiếm <i class="fa fa-search" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+              <!-- Login/Register & Cart Button -->
+              <div class="login-register-cart-button d-flex align-items-center">
+                <!-- Login/Register -->
+
+                <div>
+                  <div class="login-register-btn mr-50 userMenu rounded" style="width: 150px">
+                    <a class="nav-link" *ngIf="isLoggedIn" routerLink="/user">Hello, {{ username }}</a>
+                    <ul class="subUserMenu ">
+                      <li class="rounded-top text-center text-white login-register-btn">
+                        <a routerLink="/newSong" class="btn btn-lg">
+                          <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                        </a>
+                      </li>
+                      <li class=" text-center text-white login-register-btn"><a routerLink="/songs/user">My Song</a></li>
+                      <li class=" text-center text-white login-register-btn "><a routerLink="/myPlaylist">My Playlist</a>
+                      </li>
+                      <li class="rounded-bottom text-center text-white login-register-btn "><a *ngIf="isLoggedIn"
+                                                                                               (click)="logOut()">Logout</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="login-register-btn mr-50 ">
+                  <a *ngIf="!isLoggedIn" routerLink="/login" id="loginBtn">Login</a>
+                </div>
+
+                <div class="login-register-btn mr-50">
+                  <a *ngIf="!isLoggedIn" routerLink="/registration" id="registerBtn">Register</a>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Nav End -->
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="searchBarStatus" style="width: 30%; margin-left: 35%">
+    <app-search-home></app-search-home>
+  </div>
+</header>
+<!-- ##### Header Area End ##### -->
+
+<router-outlet></router-outlet>
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area" style="clear: both">
+  <div class="container">
+    <div class="row d-flex flex-wrap align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="footer-nav">
+          <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a href="#">Albums</a></li>
+            <li><a routerLink="/playlist">Playlist</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
